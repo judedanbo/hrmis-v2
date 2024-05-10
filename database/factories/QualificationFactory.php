@@ -2,17 +2,14 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Person;
 use App\Models\Qualification;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class QualificationFactory extends Factory
 {
-
     protected $model = Qualification::class;
 
-   
     public function definition(): array
     {
         return [

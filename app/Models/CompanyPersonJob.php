@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Traits\LogAllTraits;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CompanyPersonJob extends Pivot
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, LogAllTraits, SoftDeletes;
 
     protected $fillable = [
         'start_date',

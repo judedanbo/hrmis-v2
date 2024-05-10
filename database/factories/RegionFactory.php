@@ -2,16 +2,13 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Region;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RegionFactory extends Factory
 {
-
     protected $model = Region::class;
 
-   
     public function definition(): array
     {
         return [

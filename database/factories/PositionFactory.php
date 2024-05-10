@@ -2,18 +2,15 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Company;
 use App\Models\Position;
 use App\Models\Unit;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PositionFactory extends Factory
 {
-
     protected $model = Position::class;
 
-   
     public function definition(): array
     {
         return [

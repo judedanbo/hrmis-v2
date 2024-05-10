@@ -2,18 +2,15 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\CompanyPerson;
 use App\Models\CompanyPersonUnit;
 use App\Models\Unit;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyPersonUnitFactory extends Factory
 {
-
     protected $model = CompanyPersonUnit::class;
 
-   
     public function definition(): array
     {
         return [

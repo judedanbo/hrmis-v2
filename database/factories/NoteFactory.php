@@ -2,8 +2,6 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Company;
 use App\Models\CompanyPerson;
 use App\Models\Dependant;
@@ -15,13 +13,12 @@ use App\Models\Person;
 use App\Models\Position;
 use App\Models\Qualification;
 use App\Models\Unit;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class NoteFactory extends Factory
 {
-
     protected $model = Note::class;
 
-   
     public function definition(): array
     {
         return [

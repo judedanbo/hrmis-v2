@@ -2,16 +2,13 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\CompanyPerson;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyPersonFactory extends Factory
 {
-
     protected $model = CompanyPerson::class;
 
-   
     public function definition(): array
     {
         return [

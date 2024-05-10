@@ -2,18 +2,15 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\CompanyPerson;
 use App\Models\Dependant;
 use App\Models\Person;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DependantFactory extends Factory
 {
-
     protected $model = Dependant::class;
 
-   
     public function definition(): array
     {
         return [

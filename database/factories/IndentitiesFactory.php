@@ -2,17 +2,14 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Indentities;
 use App\Models\Person;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class IndentitiesFactory extends Factory
 {
-
     protected $model = Indentities::class;
 
-   
     public function definition(): array
     {
         return [
