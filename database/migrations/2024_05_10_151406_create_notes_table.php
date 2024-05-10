@@ -10,20 +10,20 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('description');
-            $table->string('file');
+            $table->text('title');
+            $table->text('note');
             $table->foreignId('person_id');
             $table->foreignId('company_person_id');
             $table->foreignId('company_id');
             $table->foreignId('unit_id');
             $table->foreignId('position_id');
-            $table->foreignId('job_id');
-            $table->foreignId('job_category_id');
+            $table->foreignId('rank_id');
+            $table->foreignId('rank_category_id');
             $table->foreignId('dependant_id');
             $table->foreignId('qualification_id');
+            $table->foreignId('document_id');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +33,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('notes');
     }
 };

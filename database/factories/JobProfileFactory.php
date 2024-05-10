@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Job;
 use App\Models\JobProfile;
+use App\Models\Rank;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class JobProfileFactory extends Factory
@@ -15,7 +15,7 @@ class JobProfileFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text(),
-            'job_id' => Job::factory(),
+            'rank_id' => Rank::factory(),
         ];
     }
 }

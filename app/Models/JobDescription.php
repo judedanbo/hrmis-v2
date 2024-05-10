@@ -16,17 +16,17 @@ class JobDescription extends Model
     protected $fillable = [
         'title',
         'description',
-        'job_id',
+        'rank_id',
     ];
 
     protected $casts = [
         'id' => 'integer',
-        'job_id' => 'integer',
+        'rank_id' => 'integer',
     ];
 
-    public function job(): BelongsTo
+    public function rank(): BelongsTo
     {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Rank::class);
     }
 
     public function documents(): HasMany

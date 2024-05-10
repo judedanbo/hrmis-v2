@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\JobCategory;
+use App\Models\RankCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class JobCategoryFactory extends Factory
+class RankCategoryFactory extends Factory
 {
-    protected $model = JobCategory::class;
+    protected $model = RankCategory::class;
 
     public function definition(): array
     {

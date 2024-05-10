@@ -10,23 +10,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Job extends Model
+class Rank extends Model
 {
     use HasFactory, LogAllTraits, SoftDeletes;
 
     protected $fillable = [
         'title',
         'type',
-        'next_job',
+        'job_id',
         'company_id',
-        'job_category_id',
+        'rank_category_id',
     ];
 
     protected $casts = [
         'id' => 'integer',
-        'next_job' => 'integer',
+        'job_id' => 'integer',
         'company_id' => 'integer',
-        'job_category_id' => 'integer',
+        'rank_category_id' => 'integer',
     ];
 
     public function company(): BelongsTo
@@ -34,14 +34,14 @@ class Job extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function jobCategory(): BelongsTo
+    public function rankCategory(): BelongsTo
     {
-        return $this->belongsTo(JobCategory::class);
+        return $this->belongsTo(RankCategory::class);
     }
 
-    public function nextJob(): BelongsTo
+    public function job(): BelongsTo
     {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Rank::class);
     }
 
     public function companyPeople(): BelongsToMany
@@ -49,7 +49,7 @@ class Job extends Model
         return $this->belongsToMany(CompanyPerson::class)
             ->using(CompanyPersonJob::class)
             ->as('company_person_job')
-            ->withPivot('id', 'start_date', 'end_date', 'remarks', 'company_person_id', 'job_id')
+            ->withPivot('id', 'start_date', 'end_date', 'remarks', 'company_person_id', 'rank_id')
             ->withTimestamps();
     }
 

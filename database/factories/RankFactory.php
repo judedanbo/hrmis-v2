@@ -3,22 +3,22 @@
 namespace Database\Factories;
 
 use App\Models\Company;
-use App\Models\Job;
-use App\Models\JobCategory;
+use App\Models\Rank;
+use App\Models\RankCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class JobFactory extends Factory
+class RankFactory extends Factory
 {
-    protected $model = Job::class;
+    protected $model = Rank::class;
 
     public function definition(): array
     {
         return [
             'title' => $this->faker->sentence(4),
             'type' => $this->faker->regexify('[A-Za-z0-9]{4}'),
-            'next_job' => Job::factory()->create()->next_job,
+            'job_id' => Rank::factory(),
             'company_id' => Company::factory(),
-            'job_category_id' => JobCategory::factory(),
+            'rank_category_id' => RankCategory::factory(),
         ];
     }
 }

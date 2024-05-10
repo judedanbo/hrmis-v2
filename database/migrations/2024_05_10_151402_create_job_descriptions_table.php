@@ -10,9 +10,13 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('company_person_job', function (Blueprint $table) {
-            $table->foreignId('company_person_id');
-            $table->foreignId('job_id');
+        Schema::create('job_descriptions', function (Blueprint $table) {
+            $table->id();
+            $table->string('title', 100);
+            $table->text('description');
+            $table->foreignId('rank_id');
+            $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -20,6 +24,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('company_person_job');
+        Schema::dropIfExists('job_descriptions');
     }
 };

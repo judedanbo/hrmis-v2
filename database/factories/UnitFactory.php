@@ -15,7 +15,7 @@ class UnitFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'type' => $this->faker->regexify('[A-Za-z0-9]{4}'),
-            'parent_unit' => Unit::factory()->create()->parent_unit,
+            'unit_id' => Unit::factory(),
             'company_id' => Company::factory(),
         ];
     }

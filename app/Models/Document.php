@@ -22,8 +22,8 @@ class Document extends Model
         'company_id',
         'unit_id',
         'position_id',
-        'job_id',
-        'job_category_id',
+        'rank_id',
+        'rank_category_id',
         'dependant_id',
         'qualification_id',
     ];
@@ -35,8 +35,8 @@ class Document extends Model
         'company_id' => 'integer',
         'unit_id' => 'integer',
         'position_id' => 'integer',
-        'job_id' => 'integer',
-        'job_category_id' => 'integer',
+        'rank_id' => 'integer',
+        'rank_category_id' => 'integer',
         'dependant_id' => 'integer',
         'qualification_id' => 'integer',
     ];
@@ -66,14 +66,14 @@ class Document extends Model
         return $this->belongsTo(Position::class);
     }
 
-    public function job(): BelongsTo
+    public function rank(): BelongsTo
     {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Rank::class);
     }
 
-    public function jobCategory(): BelongsTo
+    public function rankCategory(): BelongsTo
     {
-        return $this->belongsTo(JobCategory::class);
+        return $this->belongsTo(RankCategory::class);
     }
 
     public function dependant(): BelongsTo

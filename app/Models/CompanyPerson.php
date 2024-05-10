@@ -4,12 +4,12 @@ namespace App\Models;
 
 use App\Http\Traits\LogAllTraits;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class CompanyPerson extends Pivot
+class CompanyPerson extends Model
 {
     use HasFactory, LogAllTraits, SoftDeletes;
 
@@ -51,12 +51,12 @@ class CompanyPerson extends Pivot
         return $this->belongsToMany(Position::class);
     }
 
-    public function jobs(): BelongsToMany
+    public function ranks(): BelongsToMany
     {
-        return $this->belongsToMany(Job::class)
+        return $this->belongsToMany(Rank::class)
             ->using(CompanyPersonJob::class)
             ->as('company_person_job')
-            ->withPivot('id', 'start_date', 'end_date', 'remarks', 'company_person_id', 'job_id')
+            ->withPivot('id', 'start_date', 'end_date', 'remarks', 'company_person_id', 'rank_id')
             ->withTimestamps();
     }
 

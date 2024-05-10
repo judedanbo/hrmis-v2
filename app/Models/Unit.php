@@ -17,13 +17,13 @@ class Unit extends Model
     protected $fillable = [
         'name',
         'type',
-        'parent_unit',
+        'unit_id',
         'company_id',
     ];
 
     protected $casts = [
         'id' => 'integer',
-        'parent_unit' => 'integer',
+        'unit_id' => 'integer',
         'company_id' => 'integer',
     ];
 
@@ -32,7 +32,7 @@ class Unit extends Model
         return $this->belongsTo(Company::class);
     }
 
-    public function parentUnit(): BelongsTo
+    public function unit(): BelongsTo
     {
         return $this->belongsTo(Unit::class);
     }

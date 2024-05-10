@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class JobCategory extends Model
+class RankCategory extends Model
 {
     use HasFactory, LogAllTraits, SoftDeletes;
 
@@ -20,9 +20,9 @@ class JobCategory extends Model
         'id' => 'integer',
     ];
 
-    public function jobs(): HasMany
+    public function ranks(): HasMany
     {
-        return $this->hasMany(Job::class);
+        return $this->hasMany(Rank::class);
     }
 
     public function jobDescriptions(): HasMany

@@ -10,10 +10,15 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('job_categories', function (Blueprint $table) {
+        Schema::create('positions', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
+            $table->string('title', 100);
+            $table->string('type', 4);
+            $table->foreignId('report_to')->constrained('positions');
+            $table->foreignId('unit_id');
+            $table->foreignId('company_id');
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::enableForeignKeyConstraints();
@@ -21,6 +26,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('job_categories');
+        Schema::dropIfExists('positions');
     }
 };

@@ -6,11 +6,11 @@ use App\Models\Company;
 use App\Models\CompanyPerson;
 use App\Models\Dependant;
 use App\Models\Document;
-use App\Models\Job;
-use App\Models\JobCategory;
 use App\Models\Person;
 use App\Models\Position;
 use App\Models\Qualification;
+use App\Models\Rank;
+use App\Models\RankCategory;
 use App\Models\Unit;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -29,8 +29,8 @@ class DocumentFactory extends Factory
             'company_id' => Company::factory(),
             'unit_id' => Unit::factory(),
             'position_id' => Position::factory(),
-            'job_id' => Job::factory(),
-            'job_category_id' => JobCategory::factory(),
+            'rank_id' => Rank::factory(),
+            'rank_category_id' => RankCategory::factory(),
             'dependant_id' => Dependant::factory(),
             'qualification_id' => Qualification::factory(),
         ];

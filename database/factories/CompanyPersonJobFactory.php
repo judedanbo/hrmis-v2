@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\CompanyPerson;
 use App\Models\CompanyPersonJob;
-use App\Models\Job;
+use App\Models\Rank;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyPersonJobFactory extends Factory
@@ -18,7 +18,7 @@ class CompanyPersonJobFactory extends Factory
             'end_date' => $this->faker->date(),
             'remarks' => $this->faker->regexify('[A-Za-z0-9]{200}'),
             'company_person_id' => CompanyPerson::factory(),
-            'job_id' => Job::factory(),
+            'rank_id' => Rank::factory(),
         ];
     }
 }

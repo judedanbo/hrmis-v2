@@ -20,8 +20,8 @@ return new class extends Migration
             $table->foreignId('company_id');
             $table->foreignId('unit_id');
             $table->foreignId('position_id');
-            $table->foreignId('job_id');
-            $table->foreignId('job_category_id');
+            $table->foreignId('rank_id');
+            $table->foreignId('rank_category_id');
             $table->foreignId('dependant_id');
             $table->foreignId('qualification_id');
             $table->timestamps();
